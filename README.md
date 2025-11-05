@@ -1,178 +1,354 @@
-# Creatorsfy - Shopify Integration Challenge<p align="center">
-
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-
-NestJS application with Shopify OAuth integration and webhook handling for orders.</p>
+# Creatorsfy - Shopify Integration Challenge# Creatorsfy - Shopify Integration Challenge<p align="center">
 
 
 
-## 🚀 Tech Stack[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+NestJS application for Shopify OAuth integration and webhook handling.  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+
+## StackNestJS application with Shopify OAuth integration and webhook handling for orders.</p>
+
+
 
 - **NestJS** (TypeScript)
 
-- **PostgreSQL**  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+- **PostgreSQL**
+
+- **Drizzle ORM**## 🚀 Tech Stack[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+
+- **Docker & Docker Compose**
+
+[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+## Prerequisites
+
+- **NestJS** (TypeScript)
+
+- Docker and Docker Compose installed
+
+- Node.js 20+ (for local development)- **PostgreSQL**  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+
+- Yarn package manager
 
 - **Drizzle ORM**    <p align="center">
 
+## Environment Setup
+
 - **Docker & Docker Compose**<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 
-- **Shopify OAuth & Webhooks**<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+1. Copy the environment example file:
 
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+```bash- **Shopify OAuth & Webhooks**<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 
-## 📋 Prerequisites<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+cp .env.example .env
 
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+```<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
 
-- Node.js 20+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
 
-- Yarn<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
 
-- Docker & Docker Compose  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+2. Update the `.env` file with your Shopify credentials:## 📋 Prerequisites<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
 
-- Ngrok (for webhook testing)    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+```env
 
-- Shopify Partner Account  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+SHOPIFY_API_KEY=your_shopify_api_key<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+
+SHOPIFY_API_SECRET=your_shopify_api_secret
+
+SHOPIFY_API_VERSION=2023-10- Node.js 20+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+
+HOST=https://your-ngrok-url.ngrok.io
+
+```- Yarn<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+
+
+
+## Running with Docker- Docker & Docker Compose  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+
+
+
+### Start the application:- Ngrok (for webhook testing)    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+
+```bash
+
+docker-compose up -d- Shopify Partner Account  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+
+```
 
 </p>
 
-## 🔧 Setup  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+This will:
 
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-### 1. Clone and Install Dependencies
-
-## Description
-
-```bash
-
-git clone <repository-url>[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-cd creatorsfy
-
-yarn install## Project setup
-
-```
-
-```bash
-
-### 2. Configure Environment Variables$ yarn install
-
-```
-
-Copy the example env file and fill in your Shopify credentials:
-
-## Compile and run the project
-
-```bash
-
-cp .env.example .env```bash
-
-```# development
-
-$ yarn run start
-
-Edit `.env` file:
-
-# watch mode
-
-```env$ yarn run start:dev
-
-NODE_ENV=development
-
-PORT=3000# production mode
-
-$ yarn run start:prod
-
-# Database```
-
-DATABASE_URL=postgres://postgres:postgres@db:5432/creatorsfy
-
-## Run tests
-
-# Shopify OAuth
-
-SHOPIFY_API_KEY=your_shopify_api_key```bash
-
-SHOPIFY_API_SECRET=your_shopify_api_secret# unit tests
-
-SHOPIFY_SCOPES=read_orders,write_orders$ yarn run test
-
-SHOPIFY_API_VERSION=2023-10
-
-HOST=https://<your-ngrok-url># e2e tests
-
-```$ yarn run test:e2e
-
-
-
-### 3. Run with Docker Compose# test coverage
-
-$ yarn run test:cov
-
-Start the entire application (API + PostgreSQL):```
-
-
-
-```bash## Deployment
-
-docker-compose up
-
-```When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-
-
-Or run in detached mode:If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-
-
-```bash```bash
-
-docker-compose up -d$ yarn install -g @nestjs/mau
-
-```$ mau deploy
-
-```
-
-The application will:
-
-- Start PostgreSQL on port 5433With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- Start a PostgreSQL database on port 5432## 🔧 Setup  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
 
 - Run database migrations automatically
 
-- Start the NestJS API on port 3000## Resources
+- Start the NestJS API on port 3000  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 
 
-### 4. Setup NgrokCheck out a few resources that may come in handy when working with NestJS:
+### View logs:### 1. Clone and Install Dependencies
+
+```bash
+
+# All services## Description
+
+docker-compose logs -f
+
+```bash
+
+# Only API
+
+docker-compose logs -f apigit clone <repository-url>[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 
 
-In a separate terminal, start ngrok:- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+# Only Databasecd creatorsfy
 
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+docker-compose logs -f db
 
-```bash- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+```yarn install## Project setup
 
-ngrok http 3000- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
 
-```- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
 
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+### Stop the application:```
 
-Copy the HTTPS URL (e.g., `https://abc123.ngrok.io`) and update the `HOST` variable in your `.env` file.- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+```bash
 
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+docker-compose down```bash
 
-## 🗄️ Database Management
+```
 
-## Support
+### 2. Configure Environment Variables$ yarn install
+
+### Stop and remove volumes (clean database):
+
+```bash```
+
+docker-compose down -v
+
+```Copy the example env file and fill in your Shopify credentials:
+
+
+
+## Local Development## Compile and run the project
+
+
+
+### Install dependencies:```bash
+
+```bash
+
+yarn installcp .env.example .env```bash
+
+```
+
+```# development
+
+### Run database migrations:
+
+```bash$ yarn run start
+
+yarn db:push
+
+```Edit `.env` file:
+
+
+
+### Start in development mode:# watch mode
+
+```bash
+
+yarn start:dev```env$ yarn run start:dev
+
+```
+
+NODE_ENV=development
+
+### Other useful commands:
+
+```bashPORT=3000# production mode
+
+# Generate new migration
+
+yarn db:generate$ yarn run start:prod
+
+
+
+# Open Drizzle Studio (database GUI)# Database```
+
+yarn db:studio
+
+DATABASE_URL=postgres://postgres:postgres@db:5432/creatorsfy
+
+# Build for production
+
+yarn build## Run tests
+
+
+
+# Start production server# Shopify OAuth
+
+yarn start:prod
+
+SHOPIFY_API_KEY=your_shopify_api_key```bash
+
+# Run tests
+
+yarn testSHOPIFY_API_SECRET=your_shopify_api_secret# unit tests
+
+
+
+# Run linterSHOPIFY_SCOPES=read_orders,write_orders$ yarn run test
+
+yarn lint
+
+```SHOPIFY_API_VERSION=2023-10
+
+
+
+## Database SchemaHOST=https://<your-ngrok-url># e2e tests
+
+
+
+### Shops Table```$ yarn run test:e2e
+
+Stores Shopify store information after OAuth:
+
+- `id`: Primary key
+
+- `shop`: Store domain (unique)
+
+- `access_token`: OAuth access token### 3. Run with Docker Compose# test coverage
+
+- `connected_at`: Connection timestamp
+
+- `created_at`: Record creation timestamp$ yarn run test:cov
+
+- `updated_at`: Record update timestamp
+
+Start the entire application (API + PostgreSQL):```
+
+### Orders Table
+
+Stores Shopify orders received via webhook:
+
+- `id`: Primary key
+
+- `shop_id`: Foreign key to shops table```bash## Deployment
+
+- `shopify_order_id`: Shopify order ID (unique)
+
+- `order_number`: Order numberdocker-compose up
+
+- `email`: Customer email
+
+- `total_price`: Order total```When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+- `currency`: Currency code
+
+- `financial_status`: Payment status
+
+- `fulfillment_status`: Fulfillment status
+
+- `order_data`: Full order JSON from ShopifyOr run in detached mode:If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+- `created_at`: Record creation timestamp
+
+- `updated_at`: Record update timestamp
+
+
+
+## API Endpoints```bash```bash
+
+
+
+- `GET /` - Health checkdocker-compose up -d$ yarn install -g @nestjs/mau
+
+- `GET /auth/shopify` - Start OAuth flow (coming soon)
+
+- `GET /auth/callback` - OAuth callback (coming soon)```$ mau deploy
+
+- `POST /webhooks/orders/create` - Receive order webhooks (coming soon)
+
+```
+
+## Testing
+
+The application will:
+
+Access the application at: http://localhost:3000
+
+- Start PostgreSQL on port 5433With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+Check database connection in the logs - you should see:
+
+```- Run database migrations automatically
+
+✅ Database connected successfully
+
+```- Start the NestJS API on port 3000## Resources
+
+
+
+## Ngrok Setup
+
+
+
+For webhook testing, expose your local server:### 4. Setup NgrokCheck out a few resources that may come in handy when working with NestJS:
+
+
+
+```bash
+
+ngrok http 3000
+
+```In a separate terminal, start ngrok:- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+
+
+
+Update the `HOST` variable in `.env` with the ngrok URL.- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+
+
+
+## Project Structure```bash- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+
+
+
+```ngrok http 3000- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+
+creatorsfy/
+
+├── src/```- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+
+│   ├── db/
+
+│   │   ├── schema.ts          # Database schema- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+
+│   │   ├── database.module.ts # Database module
+
+│   │   └── database.service.ts # Database serviceCopy the HTTPS URL (e.g., `https://abc123.ngrok.io`) and update the `HOST` variable in your `.env` file.- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+
+│   ├── app.module.ts          # Main app module
+
+│   └── main.ts                # Application entry point- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+├── drizzle/                   # Database migrations
+
+├── docker-compose.yml         # Docker services configuration## 🗄️ Database Management
+
+├── Dockerfile                 # API container configuration
+
+└── .env.example               # Environment variables template## Support
+
+```
 
 ### Run Migrations
 
+## License
+
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+UNLICENSED
 
 ```bash
 

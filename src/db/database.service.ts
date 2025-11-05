@@ -13,13 +13,13 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 
   async onModuleInit() {
     const databaseUrl = this.configService.get<string>('DATABASE_URL');
-    
+
     this.pool = new Pool({
       connectionString: databaseUrl,
     });
 
     this.db = drizzle(this.pool, { schema });
-    
+
     // Test connection
     try {
       await this.pool.query('SELECT NOW()');
