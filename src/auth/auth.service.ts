@@ -35,6 +35,11 @@ export class AuthService {
     const { hmac, ...params } = query;
     const secret = this.configService.get<string>('SHOPIFY_API_SECRET');
 
+    if (!secret) {
+      this.logger.error('SHOPIFY_API_SECRET is not configured');
+      return false;
+    }
+
     const message = Object.keys(params)
       .sort()
       .map((key) => `${key}=${params[key]}`)

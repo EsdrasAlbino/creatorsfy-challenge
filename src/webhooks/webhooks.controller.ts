@@ -5,12 +5,15 @@ import {
   Body,
   BadRequestException,
   Logger,
-  RawBodyRequest,
   Req,
 } from '@nestjs/common';
-import { Request } from 'express';
+import type { Request } from 'express';
 import { WebhooksService } from './webhooks.service';
-import { ShopifyOrder } from './order.service';
+import type { ShopifyOrder } from './order.service';
+
+interface RawBodyRequest extends Request {
+  rawBody?: Buffer;
+}
 
 @Controller('webhooks')
 export class WebhooksController {
@@ -26,7 +29,7 @@ export class WebhooksController {
   async handleOrderCreate(
     @Headers('x-shopify-hmac-sha256') hmac: string,
     @Headers('x-shopify-shop-domain') shopDomain: string,
-    @Req() req: RawBodyRequest<Request>,
+    @Req() req: RawBodyRequest,
     @Body() body: ShopifyOrder,
   ) {
     this.logger.log(`Received order webhook from shop: ${shopDomain}`);
